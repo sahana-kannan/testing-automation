@@ -1,4 +1,4 @@
-# approach3 — LLM-driven test-generation pipeline
+# Merged from the new-approach (PRD-driven) and main (ticket-flow) branches.
 # Python 3.13
 #
 # Install:
@@ -11,9 +11,15 @@
 # hashlib, difflib, importlib, subprocess, tempfile, urllib, collections,
 # decimal, traceback) is part of the Python standard library.
 
+# ── Current pipeline (extract/generate1/generate2/sanitize/record/execute/report) ──
 openai==2.44.0          # extract.py query plan, generate1/generate2 LLM calls
-python-dotenv==1.2.2    # loads approach3/.env
+python-dotenv==1.2.2    # loads .env
 PyMySQL==1.2.0          # extract.py live DB queries
 cryptography==49.0.0    # extract.py AES-256-CBC decrypt of the DB password
 playwright==1.61.0      # record.py (codegen) + execute.py (test runs)
 openpyxl==3.1.5         # report.py Excel workbook
+
+# ── legacy_ticket_flows/ pipeline (older ticket-flow scripts, kept for reference) ──
+pytest>=8.0.0            # legacy_ticket_flows/execute.py spawns pytest-playwright
+pytest-playwright>=0.5.0
+requests>=2.31.0         # legacy_ticket_flows/execute.py — API auth + multi-session tests

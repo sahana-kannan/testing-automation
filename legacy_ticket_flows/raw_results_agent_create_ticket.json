@@ -1,0 +1,21 @@
+[
+  {
+    "id": "TC037",
+    "category": "role_permission_access",
+    "flow": "agent_create_ticket",
+    "test_mode": "permission",
+    "description": "Agent with LIMITED access cannot create a ticket in the Electrical department.",
+    "inputs": {
+      "customer": "Acme Corp",
+      "user": "Alice Smith",
+      "subject": "Server not responding"
+    },
+    "expected_outcome": "fail",
+    "expected_message": "You do not have permission to create a ticket in this department.",
+    "actual_outcome": "pass",
+    "actual_message": "'case' correctly absent for Jane Smith",
+    "passed": true,
+    "raw_output": "============================= test session starts =============================\ncollecting ... collected 1 item\n\n..\\..\\..\\..\\..\\..\\AppData\\Local\\Temp\\tmp76hkbggf\\test_TC037.py::test_permission_TC037[chromium] PASSED [100%]\n\n============================== 1 passed in 8.59s ==============================\n",
+    "artifacts": []
+  }
+]

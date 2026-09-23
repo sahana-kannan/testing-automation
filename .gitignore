@@ -7,6 +7,10 @@ yarn-error.log*
 .env
 **/.env
 
+# Browser session state — contains live auth cookies/JWTs for test accounts
+storage_states/
+**/storage_states/
+
 # Build outputs
 dist/
 build/
